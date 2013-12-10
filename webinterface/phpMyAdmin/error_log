@@ -1,0 +1,2 @@
+[12-May-2013 11:55:13 America/New_York] PHP Fatal error:  Call to undefined function PMA_SQP_parse() in /home/jiavap/umdmi.com/public_html/phpMyAdmin/libraries/Util.class.php on line 1112
+[12-May-2013 14:40:13 America/New_York] PHP Fatal error:  Call to undefined function PMA_SQP_parse() in /home/jiavap/umdmi.com/public_html/phpMyAdmin/libraries/Util.class.php on line 1112

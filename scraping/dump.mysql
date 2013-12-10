@@ -1,0 +1,113 @@
+-- MySQL dump 10.13  Distrib 5.5.32, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: project
+-- ------------------------------------------------------
+-- Server version	5.5.32-0ubuntu0.12.10.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `event`
+--
+
+DROP TABLE IF EXISTS `event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lid` int(11) DEFAULT NULL,
+  `event_name` text NOT NULL,
+  `date` date DEFAULT NULL,
+  `end_time` time DEFAULT NULL,
+  `start_time` time NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=527 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event`
+--
+
+LOCK TABLES `event` WRITE;
+/*!40000 ALTER TABLE `event` DISABLE KEYS */;
+INSERT INTO `event` VALUES (516,5,'MATLAB: Data Analysis and Visualization for Scientists and Engineers','2013-11-22','12:30:00','11:00:00'),(517,11,'School of Economics Seminar Series Presents Dr. Nick Muller','2013-11-22','15:30:00','14:00:00'),(518,5,'Basic Web Design: Using WordPress to Create an Online Presence','2013-11-22','16:30:00','15:00:00'),(522,4,'Software Engineering Seminar: Aws Albarghouthi, University of Toronto','2013-11-25','15:00:00','15:00:00'),(523,4,'SCS Distinguished Lecture: Jennifer Tour Chayes','2013-11-26','12:00:00','11:00:00'),(526,12,'Integrated Cancer Research Seminar Series','2013-11-26','17:00:00','16:00:00');
+/*!40000 ALTER TABLE `event` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `location`
+--
+
+DROP TABLE IF EXISTS `location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `location` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `lat_positive` tinyint(1) NOT NULL,
+  `lat_deg` tinyint(4) NOT NULL,
+  `lat_min` tinyint(4) NOT NULL,
+  `lat_sec` tinyint(4) DEFAULT NULL,
+  `lat_micro` tinyint(4) DEFAULT NULL,
+  `lon_positive` tinyint(1) NOT NULL,
+  `lon_deg` tinyint(4) NOT NULL,
+  `lon_min` tinyint(4) NOT NULL,
+  `lon_sec` tinyint(4) DEFAULT NULL,
+  `lon_micro` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `location`
+--
+
+LOCK TABLES `location` WRITE;
+/*!40000 ALTER TABLE `location` DISABLE KEYS */;
+INSERT INTO `location` VALUES (2,'College of Computing',1,33,77,74,8,0,84,39,75,9),(3,'Howey Physics Building',1,33,77,74,9,0,84,39,78,92),(4,'Klaus Advanced Computing Building',1,33,77,70,4,0,84,39,54,66),(5,'Library',1,33,77,39,13,0,84,39,54,62),(6,'Alexander Memorial Coliseum',1,33,78,7,97,0,84,39,28,5),(7,'Clough Undergraduate Learning Center',1,33,77,49,20,0,84,39,64,14),(8,'Campus Recreation Center',1,33,77,55,66,0,84,40,42,9),(9,'Student Center',1,33,77,33,85,0,84,39,92,35),(10,'Swann Building',1,33,77,13,32,0,84,39,54,98),(11,'Old CE Building',1,33,77,39,27,0,84,39,40,28),(12,'Parker H. Petit Institute for Bioengineering & Bio',1,33,77,86,5,0,84,39,74,63);
+/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `name_alias`
+--
+
+DROP TABLE IF EXISTS `name_alias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `name_alias` (
+  `naid` int(11) NOT NULL AUTO_INCREMENT,
+  `lid` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`naid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `name_alias`
+--
+
+LOCK TABLES `name_alias` WRITE;
+/*!40000 ALTER TABLE `name_alias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `name_alias` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-11-22  0:28:15
